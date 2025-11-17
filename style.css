@@ -57,7 +57,38 @@ body {
   border-color: #4b5563;
 }
 
-.calculator {
-  width: 100%;
-  height: calc(100vh - 80px); /* fills most of the page */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Your top bar stays at the top */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  background: #0b1020;
+  color: #fff;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Fullscreen area below the top bar */
+.fullpage {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* MAKE DESMOS FILL THE WHOLE SPACE */
+#calculator {
+  flex: 1;
 }
