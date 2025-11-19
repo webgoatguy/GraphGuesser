@@ -43,7 +43,7 @@ body {
   border-radius: 999px;
   text-decoration: none;
   font-weight: 500;
-  border: 30px solid transparent;
+  border: 1px solid transparent;
 }
 
 .btn-primary {
@@ -95,6 +95,7 @@ html, body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 0.4rem 0;
 }
 
 /* MAKE DESMOS FILL THE WHOLE SPACE */
