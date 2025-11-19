@@ -6,13 +6,14 @@ if (elt) {
     expressions: true,
     settingsMenu: false,
     zoomButtons: false,
-    expressionsCollapsed: true
+    expressionsCollapsed: false
   });
 
   // Example function for now
   calculator.setExpression({
     id: "f",
-    latex: "f(x)=\\sin(x)"
+    latex: "f(x)=\\sin(x)",
+    secret: true
   });
 
   // TODO: later we’ll add:
