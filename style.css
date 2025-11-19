@@ -77,8 +77,33 @@ html, body {
   padding: 0.8rem 1.2rem;
   background: #0b1020;
   color: #fff;
-  z-index: 10;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.difficulty-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.difficulty-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.8rem;
+}
+
+.difficulty-label {
+  opacity: 0.8;
+}
+
+.difficulty-select {
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+  border-radius: 0.35rem;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
 }
 
 /* Fullscreen area below the top bar */
@@ -95,7 +120,10 @@ html, body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 0.4rem 0;
+}
+
+.center-content .btn-primary {
+  margin: 0.4rem 0;   /* vertical gap */
 }
 
 /* MAKE DESMOS FILL THE WHOLE SPACE */
