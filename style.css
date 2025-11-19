@@ -43,7 +43,7 @@ body {
   border-radius: 999px;
   text-decoration: none;
   font-weight: 500;
-  border: 1px solid transparent;
+  border: 30px solid transparent;
 }
 
 .btn-primary {
