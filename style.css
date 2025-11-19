@@ -88,6 +88,15 @@ html, body {
   overflow: hidden;
 }
 
+body.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
 /* MAKE DESMOS FILL THE WHOLE SPACE */
 #calculator {
   flex: 1;
