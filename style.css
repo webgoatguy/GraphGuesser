@@ -69,7 +69,6 @@ html, body {
   height: 100vh;
 }
 
-/* Your top bar stays at the top */
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -106,7 +105,7 @@ html, body {
   font-size: 0.8rem;
 }
 
-/* Fullscreen area below the top bar */
+/* for play page */
 .fullpage {
   flex: 1;
   display: flex;
@@ -123,7 +122,7 @@ html, body {
 }
 
 .center-content .btn-primary {
-  margin: 0.4rem 0;   /* vertical gap */
+  margin: 0.4rem 0;   
 }
 
 /* MAKE DESMOS FILL THE WHOLE SPACE */

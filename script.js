@@ -7,7 +7,7 @@ const calculator = Desmos.GraphingCalculator(elt, {
   expressionsCollapsed: true
 });
 
-// Example: draw a function
+//old stuff
 calculator.setExpression({
   id: "f",
   latex: "f(x)=x"

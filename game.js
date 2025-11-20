@@ -1,4 +1,4 @@
-// ----- LEVEL DATA -----
+// level data
 const LEVELS = {
   easy: [
     { name: "Bounce", latex: "f(x)=\\left|\\ln(x+1)\\right|" },
@@ -36,7 +36,7 @@ const LEVELS = {
   ]
 };
 
-// ----- DESMOS SETUP -----
+// desmos
 const elt = document.getElementById("calculator");
 let calculator = null;
 
@@ -47,10 +47,8 @@ function loadLevel(difficulty, index) {
   const level = levelList[index];
   if (!level) return;
 
-  // Clear existing expressions
   calculator.setExpressions([]);
 
-  // Set a fixed viewport (you can tweak these numbers)
   calculator.setMathBounds({
     left: -10,
     right: 10,
@@ -58,7 +56,6 @@ function loadLevel(difficulty, index) {
     top: 10
   });
 
-  // Add the target function as a secret expression
   calculator.setExpression({
     id: "target",
     latex: level.latex,
@@ -79,7 +76,6 @@ function setupDifficultySelect(selectId, difficulty) {
     const index = Number(value);
     loadLevel(difficulty, index);
 
-    // Optional: clear other selects so only one is active
     ["easy-select", "medium-select", "hard-select", "impossible-select"]
       .filter(id => id !== selectId)
       .forEach(id => {
@@ -97,12 +93,10 @@ if (elt) {
     zoomButtons: false
   });
 
-  // Hook up all four dropdowns
   setupDifficultySelect("easy-select", "easy");
   setupDifficultySelect("medium-select", "medium");
   setupDifficultySelect("hard-select", "hard");
   setupDifficultySelect("impossible-select", "impossible");
 
-  // Optional: auto-load the first easy level when the page opens
   loadLevel("easy", 0);
 }
