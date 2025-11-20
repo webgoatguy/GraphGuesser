@@ -29,10 +29,10 @@ const LEVELS = {
     { name: "Up Up And Away", latex: "f(x)=x^{5/2}-e^x+x!" }
   ],
   impossible: [
-    { name: "Ridiculousness", latex: "f(x)=\\sin(\\sqrt{x})\\sin(x)" },
+    { name: "Ridiculousness", latex: "f(x)=\\sin(\\sqrt{x})^{\\sin(x)}" },
     { name: "Polite", latex: "f(x)=x!\\,e^{-x}\\ln(x)" },
     { name: "Impolite", latex: "f(x)=\\frac{\\sin(x^2)}{x}+x^2\\ln(x)" },
-    { name: "Downright Rude", latex: "f(x)=\\frac{\\ln(1/x)}{x}+e^x+\\tan(x)" }
+    { name: "Downright Rude", latex: "f(x)=x^{\\ln\\left(\\frac{1}{x}\\right)}+e^x+\\tan(x)" }
   ]
 };
 
