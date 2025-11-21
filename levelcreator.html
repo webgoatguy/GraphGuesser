@@ -1,0 +1,35 @@
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Level Creator Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="top-bar">
+      <h1 class="logo">GraphGuesser</h1>
+
+      <nav>
+        <button id="export-button" class="btn-primary">Export f(x)</button>
+      </nav>
+      <a href="index.html" class="btn-secondary">Back to Home</a>
+    </header>
+
+    <main class="fullpage">
+      <div id="calculator"></div>
+      <div id="export-popup" class="popup hidden">
+        <h2>Exported!</h2>
+        <p>Copy the following encoded level data:</p>
+        <span id="export-code">CODE</span>
+        <button id="export-copy" class="btn-secondary">copy</button>
+        <button id="export-close">x</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="levelcreator.js"></script>
+</body>
+</html>

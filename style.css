@@ -44,6 +44,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -128,4 +129,42 @@ html, body {
 /* MAKE DESMOS FILL THE WHOLE SPACE */
 #calculator {
   flex: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #0b1020;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+#export-code {
+  font-family: monospace;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #000;
+  border-radius: 0.25rem;
+  word-break: break-all;
+  user-select: all;
+}
+
+#export-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
