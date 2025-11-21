@@ -1,3 +1,5 @@
+const importButton = document.getElementById("import-custom");
+
 // level data
 const LEVELS = {
   easy: [
@@ -40,13 +42,7 @@ const LEVELS = {
 const elt = document.getElementById("calculator");
 let calculator = null;
 
-function loadLevel(difficulty, index) {
-  const levelList = LEVELS[difficulty];
-  if (!levelList) return;
-
-  const level = levelList[index];
-  if (!level) return;
-
+function loadLevel(latex) {
   calculator.setExpressions([]);
 
   calculator.setMathBounds({
@@ -58,11 +54,9 @@ function loadLevel(difficulty, index) {
 
   calculator.setExpression({
     id: "target",
-    latex: level.latex,
+    latex: latex,
     secret: true
   });
-
-  console.log(`Loaded ${difficulty} level ${index}: ${level.latex}`);
 }
 
 function setupDifficultySelect(selectId, difficulty) {
@@ -74,7 +68,9 @@ function setupDifficultySelect(selectId, difficulty) {
     if (value === "") return;
 
     const index = Number(value);
-    loadLevel(difficulty, index);
+    
+    loadLevel(LEVELS[difficulty][index]);
+    console.log(`Loaded ${difficulty} level ${index}`);
 
     ["easy-select", "medium-select", "hard-select", "impossible-select"]
       .filter(id => id !== selectId)
@@ -84,6 +80,30 @@ function setupDifficultySelect(selectId, difficulty) {
       });
   });
 }
+
+function decodeLevelData(data) {
+  const version = data[0];
+  data = data.slice(1);
+  if (version === "1") {
+    const bytes = atob(data);
+    return new TextDecoder().decode(
+      Uint8Array.from(
+        bytes, 
+        c => ((c.charCodeAt(0) - bytes.length) % 256 + 256) % 256
+      )
+    );
+  }
+  throw new Error("Unsupported level data version: " + version);
+}
+
+importButton.addEventListener("click", e => {
+  navigator.clipboard.readText().then(text => {
+    loadLevel(decodeLevelData(text));
+  }).catch(err => {
+    const text = prompt("Failed to read from clipboard. Please paste your level data here:", "");
+    loadLevel(decodeLevelData(text));
+  });
+});
 
 if (elt) {
   calculator = Desmos.GraphingCalculator(elt, {
